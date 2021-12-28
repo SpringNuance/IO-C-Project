@@ -1,0 +1,15 @@
+wsl: to open Linux WSL
+cd ~ 
+sudo apt install valgrind: to install valgrind
+which valgrind: check valgrind
+valgrind --trace-children=yes --leak-check=full --show-leak-kinds=all ./main
+mkdir temp
+cd temp
+touch project.c
+vim project.c
+gcc -c -std=c99 -g -Wall -Wextra -Wno-missing-field-initializers project.c -o project.o
+ls
+g++ project.o -o project
+ls
+./project
+valgrind --trace-children=yes --leak-check=full --show-leak-kinds=all ./project
